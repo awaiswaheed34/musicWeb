@@ -34,8 +34,9 @@ const ScrollableSongs = ({ searchTerm }) => {
 
   return (
     <div
+      className='w-full'
       style={{
-        display: 'flex',
+        display: 'flex w-full',
         flexDirection: 'row',
         overflowX: 'auto',
         background: 'linear-gradient(to bottom, #000000, #00cc66, #000000)',

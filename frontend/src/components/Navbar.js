@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/system';
-
+import logo from './logo.png' ;
 // Styled component for animation
 const AnimatedButton = styled(Button)`
   transition: background-color 0.3s ease-in-out;
@@ -48,6 +48,8 @@ const Navbar = () => {
     <nav className="bg-black p-4">
       <div className="container mx-auto flex justify-between items-center flex-col lg:flex-row">
         {/* Make the BOOMBOX text clickable */}
+        <div className='flex '>
+        <img src={logo} width='50px' alt="boombox" />
         <AnimatedButton
           variant="text"
           color="success"
@@ -55,7 +57,7 @@ const Navbar = () => {
         >
           HARMONY
         </AnimatedButton>
-
+        </div>
         <div className="flex items-center space-x-4">
           <Button
             variant="text"

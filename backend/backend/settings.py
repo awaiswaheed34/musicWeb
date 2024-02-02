@@ -32,6 +32,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "http://*",
     "http://harmonymusic.online",
+    "http://62.72.6.240",
 ]
 # Application definition
 

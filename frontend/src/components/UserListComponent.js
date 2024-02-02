@@ -29,7 +29,8 @@ const UserListComponent = () => {
   };
 
   return (
-    <div
+    <div 
+      className=''
       style={{
         background: 'linear-gradient(to bottom, #000000, #00cc66, #000000)',
       }}
@@ -42,7 +43,7 @@ const UserListComponent = () => {
           marginBottom: '20px',
         }}
       >
-        Find Friends
+        Find Friends!
       </h1>
       <div
         style={{

@@ -12,12 +12,9 @@ const HomePage = () => {
   return (
     <div>
     <Navbar />
-    <div
- 
-  className="flex flex-col md:flex-row"
->
+    <div className="flex flex-col md:flex-row w-full">
       
-      <div className="flex-grow flex flex-col md:flex-row">
+      <div className="flex-grow w-full flex flex-col md:flex-row">
         {/* Search Section */}
         <div  style={{
     background: 'linear-gradient(to bottom, #000000, #00cc66, #000000)',
@@ -37,10 +34,10 @@ const HomePage = () => {
         </div>
 
         {/* Scrollable Songs Section */}
-        
+       
           <ScrollableSongs searchTerm={searchTerm} />
         
-
+          
         {/* User List Section */}
        
           <UserListComponent />
