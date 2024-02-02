@@ -7,12 +7,14 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useParams } from 'react-router-dom';
 import { Container, Paper, Typography, Avatar, Grid, List, ListItem, ListItemText, Box } from '@mui/material';
+import ScrollableSongs from '../components/ScrollableSongs';
 
 const UserProfilePage = (props) => {
   const dispatch = useDispatch();
   const [userData, setUserData] = useState(null);
 
   const { username } = useParams();
+  let user  = {};
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -27,13 +29,14 @@ const UserProfilePage = (props) => {
       fetchUserData();
     } else {
       // If no username is passed, get user data from local storage
-      const user = localStorage.getItem('user');
+      user = localStorage.getItem('user');
       setUserData(JSON.parse(user));
     }
-  }, [props.username, dispatch]);
+  }, [username, dispatch]);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <ScrollableSongs/>
       <Navbar />
 
       <div
@@ -90,7 +93,7 @@ const UserProfilePage = (props) => {
                     <ListItemText primary={`Email: ${userData.email}`} style={{ color: '#00cc66' }} />
                   </ListItem>
                   <ListItem>
-                    <ListItemText primary={`Genre Likes:`} style={{ color: '#00cc66' }} />
+                    <ListItemText primary={`Preferred Genres`} style={{ color: '#00cc66' }} />
                     <List>
                       {userData.genre_likes.map((genre) => (
                         <ListItem key={genre}>
@@ -100,7 +103,7 @@ const UserProfilePage = (props) => {
                     </List>
                   </ListItem>
                   <ListItem>
-                    <ListItemText primary={`Instruments:`} style={{ color: '#00cc66' }} />
+                    <ListItemText primary={`Instruments played:`} style={{ color: '#00cc66' }} />
                     <List>
                       {userData.instruments.map((instrument) => (
                         <ListItem key={instrument}>
@@ -112,12 +115,18 @@ const UserProfilePage = (props) => {
                 </List>
 
                 {/* Add more details as needed */}
+                {/* if username is  available pass them to scoll */}
+                {userData && <ScrollableSongs searchTerm={username} />
+                }
+                
               </div>
             )}
+            
           </Paper>
+          
         </Container>
       </div>
-
+      
       <Footer />
     </div>
   );

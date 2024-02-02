@@ -2,7 +2,8 @@
 import axios from 'axios';
 
 // Set your Django backend base URL
-const BACKEND_BASE_URL = 'http://127.0.0.1:8000';
+const BACKEND_BASE_URL = 'http://62.72.6.240:8000';
+// const BACKEND_BASE_URL = 'http://localhost:8000';
 
 // Thunk for making API requests
 export const apiCallThunk = ({ endpoint, method = 'GET', data = null, headers = {} }) => async (dispatch, getState) => {

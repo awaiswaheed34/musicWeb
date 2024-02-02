@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-black p-4 text-green-500">
       <div className="container mx-auto text-center">
-        BOOMBOX
+        HARMONY
       </div>
     </footer>
   );

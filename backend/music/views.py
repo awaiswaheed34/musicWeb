@@ -59,6 +59,7 @@ def get_all_songs(request):
             'genre': song.genre,
             'instruments': song.instruments,
             'image_url': song.image_url,
+            'user': song.uploaded_by.username,
         }
         for song in all_songs
     ]

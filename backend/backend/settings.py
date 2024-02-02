@@ -31,6 +31,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # Add your frontend URL
     "http://localhost:8000",
     "http://*",
+    "http://harmonymusic.online",
 ]
 # Application definition
 

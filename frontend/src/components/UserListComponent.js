@@ -42,7 +42,7 @@ const UserListComponent = () => {
           marginBottom: '20px',
         }}
       >
-        User profile
+        Find Friends
       </h1>
       <div
         style={{

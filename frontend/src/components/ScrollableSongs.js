@@ -15,7 +15,10 @@ const ScrollableSongs = ({ searchTerm }) => {
         const response = await dispatch(getAllSongs());
         if (response.status === 'success') {
           const filteredSongs = response.songs.filter((song) =>
-            song.song_name.toLowerCase().includes(searchTerm.toLowerCase())
+          {
+            return song.song_name.toLowerCase().includes(searchTerm.toLowerCase()) 
+            || song.user.toLowerCase().includes(searchTerm.toLowerCase())
+          }
           );
           setSongs(filteredSongs);
         } else {

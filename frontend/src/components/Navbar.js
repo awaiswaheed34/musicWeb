@@ -53,7 +53,7 @@ const Navbar = () => {
           color="success"
           onClick={handleBoomboxClick}
         >
-          BOOMBOX
+          HARMONY
         </AnimatedButton>
 
         <div className="flex items-center space-x-4">
